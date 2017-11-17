@@ -159,7 +159,7 @@ Markdown Editor component for Vue.js. Github : [Vue-SimpleMDE](https://github.co
                     initialValue: 'Hello BBK',				
                     renderingConfig: {
                         codeSyntaxHighlighting: true,		
-                        highlightingTheme: 'atom-one-light' 
+                        highlightingTheme: 'atom-one-light'
                     }
                 }
             }
@@ -190,7 +190,7 @@ a vue plugin for image upload and crop. Github : [Vue-Core-Image-Upload](https:/
 </template>
 
 <script>
-    import VueCoreImageUpload  from 'vue-core-image-upload';	
+    import VueCoreImageUpload  from 'vue-core-image-upload';
     export default {
         data: function(){
             return {
@@ -225,7 +225,7 @@ Vue.js wrapper for sChart.js. Github : [vue-schart](https://github.com/linxin/vu
 		></schart>
     </div>
 </template>
-	
+
 <script>
     import Schart from 'vue-schart';
     export default {
@@ -270,13 +270,13 @@ The first step to remove the component of the routing. Enter 'src/router/index.j
 Second,delete the component files. Enter 'src/components/page/' and delete 'VueTable.vue' file.
 
 The third step is to delete the entry. Enter 'src/components/common/Sidebar.vue' and delete the code below.
-	
+
 ```HTML
 <el-menu-item index="vuetable">Vue表格组件</el-menu-item>
 ```
 
 Finally, uninstall this component.
-	
+
 	npm un vue-datasource -S
 
 Complete!
@@ -298,13 +298,4 @@ The second step to enter 'src/App.vue' and change into green theme.
 /*@import "../static/css/theme-green/color-green.css";   !*浅绿色主题*!*/
 ```
 
-Finally,enter 'src/components/common/Sidebar.vue' and find el-menu Tags,delete 'theme="dark"'。
-
-## Screenshot ##
-### Default theme ###
-
-![Image text](https://github.com/lin-xin/manage-system/raw/master/screenshots/wms1.png)
-
-### Green theme ###
-
-![Image text](https://github.com/lin-xin/manage-system/raw/master/screenshots/wms2.png)
+Finally,enter 'src/components/common/Sidebar.vue' and find el-menu Tags,delete 'theme="dark"'

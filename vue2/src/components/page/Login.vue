@@ -41,8 +41,8 @@
             submitForm1(formName) {
                 const self = this;
                 let params = {
-                    "username" :"sjz",
-                    "password" :"123456",
+                    "username" :this.ruleForm.username,
+                    "password" :this.ruleForm.password,
                 };
                 console.log(params);
 
@@ -57,7 +57,7 @@
                                         message: "登陆成功"
                                     });
                                     console.log(success.data.token);
-                                    console.log(success.data.token);
+                                    localStorage.setItem('token',success.data.token);
                                     self.$router.push('/readme');
                                 } else {
                                     this.$message({

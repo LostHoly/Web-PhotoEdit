@@ -13,7 +13,7 @@ Vue.prototype.$http = axios;
 Vue.use(ElementUI);
 Vue.prototype.$axios = axios;
 router.beforeEach((to, from, next) => {
-  let token = window.localStorage.getItem('ms_username')
+  let token = window.localStorage.getItem('token')
   if (to.matched.some(record => record.meta.requiresAuth) && (!token || token == null)) {
     console.log("无权限！");
     next({
@@ -28,4 +28,3 @@ new Vue({
     router,
     render: h => h(App)
 }).$mount('#app');
-

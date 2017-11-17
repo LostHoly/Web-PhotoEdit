@@ -4,7 +4,7 @@
         <div class="user-info">
            <el-dropdown trigger="hover">
                     <span class="el-dropdown-link userinfo-inner">
-                    <img class="user-logo" src="../../../static/img/img.jpg"> <span>{{sjz}}</span></span>
+                    <img class="user-logo" src="../../../static/img/img.jpg"> <span>{{name}}</span></span>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item  @click.native="logout">退出登录</el-dropdown-item>
                     </el-dropdown-menu>
