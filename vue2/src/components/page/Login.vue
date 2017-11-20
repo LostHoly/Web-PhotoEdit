@@ -83,8 +83,8 @@
             submitForm2(formName) {
                 const self = this;
                 let params = {
-                    "username" :"sjz",
-                    "password" :"123456",
+                    "username" :this.ruleForm.username,
+                    "password" :this.ruleForm.password,
                 };
                 console.log(params);
 
@@ -98,8 +98,6 @@
                                         type: "info",
                                         message: "注册成功"
                                     });
-                                    console.log(success.data.realname);
-                                    self.$router.push('/readme');
                                 } else {
                                     this.$message({
                                         type: "error",

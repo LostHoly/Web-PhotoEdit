@@ -3,27 +3,21 @@
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item><i class="el-icon-menu"></i> 列表</el-breadcrumb-item>
-                <el-breadcrumb-item>我的设备类别列表</el-breadcrumb-item>
+                <el-breadcrumb-item>我的图片列表</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="handle-box">
-           
-            <el-input v-model="select_word" placeholder="输入设备类别名称" class="handle-input mr10"></el-input>
+
+            <el-input v-model="select_word" placeholder="输入图片名称" class="handle-input mr10"></el-input>
             <el-button type="primary" icon="search" @click="getData()">搜索</el-button>
         </div>
 
         <el-table :data="tableData" border style="width: 100%" ref="multipleTable" >
             <el-table-column prop="mydtid" label="id" width="80">
             </el-table-column>
-            <el-table-column prop="dtname" label="类别名称" width="150">
-            </el-table-column>
-            <el-table-column prop="username" label="登陆名" width="150">
-            </el-table-column>
-            <el-table-column prop="state" label="状态" width="80">
+            <el-table-column prop="dtname" label="图片名称" width="150">
             </el-table-column>
             <el-table-column prop="notes" label="备注" >
-            </el-table-column>
-            <el-table-column prop="createtime" label="创建时间" width="200">
             </el-table-column>
             <el-table-column label="操作" width="80">
                 <template scope="scope">
@@ -55,13 +49,13 @@ import util from '../common/js/util'
                     params:{
                         dtname:value,
                         username:localStorage.getItem("ms_username"),
-                        }, 
+                        },
                     }).then(
                             success =>{
 
                                 if(success.data==true)
                                 {
-                                    return callback(new Error("设备类别名称已存在！"));
+                                    return callback(new Error("名称已存在！"));
                                 } else {
                                      callback();
                                 }
@@ -94,7 +88,7 @@ import util from '../common/js/util'
                 },
                 rules:{
                     region1:[
-                        {required: true, message: '请选择设备类别名称', trigger: 'blur'},
+                        {required: true, message: '请选择名称', trigger: 'blur'},
                         {validator: validator1, trigger: 'blur'}
                     ],
                 },
@@ -113,7 +107,7 @@ import util from '../common/js/util'
                         dtname:this.select_word,
                         page:this.page,
                         username:localStorage.getItem("ms_username"),
-                        }, 
+                        },
                     }).then(
                             success =>{
                                 this.tableData=success.data;
@@ -129,13 +123,13 @@ import util from '../common/js/util'
                                     }
                                 }
                                 this.count();
-                                
+
                             },
                             error => {
                                 console.log(error);
                             }
                         );
-               
+
             },
              handleCurrentChange(val){
                this.page = val;
@@ -149,12 +143,12 @@ import util from '../common/js/util'
                     params:{
                         dtname:this.select_word,
                         username:localStorage.getItem("ms_username"),
-                        }, 
+                        },
                     }).then(
                             success =>{
                             //console.log(111);
                             //console.log(success.data);
-                            this.total=success.data; 
+                            this.total=success.data;
 
                             },
                             error => {
