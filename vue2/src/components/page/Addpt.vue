@@ -22,7 +22,7 @@
        send(){
            this.$axios({
                 method:"get",
-                url:"/api/sjz/index",
+                url:"/api/sjz/img",
                 headers:{'token': localStorage.getItem('token')},
                 responseType:'json',
            }).then(function(response){
