@@ -7,11 +7,11 @@
                     <el-input v-model="ruleForm.username" placeholder="username"></el-input>
                 </el-form-item>
                 <el-form-item prop="password">
-                    <el-input type="password" placeholder="password" v-model="ruleForm.password" @keyup.enter.native="submitForm('ruleForm')"></el-input>
+                    <el-input type="password" placeholder="password" v-model="ruleForm.password" @keyup.enter.native="submitForm1('ruleForm')"></el-input>
                 </el-form-item>
                 <div class="login-btn">
                     <el-button type="primary" @click="submitForm1('ruleForm')">登录</el-button>
-                    <br/>
+                    <br/></br>
                     <el-button type="danger" @click="submitForm2('ruleForm')">注册</el-button>
                 </div>
             </el-form>
@@ -48,7 +48,7 @@
 
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
-                            this.$http.post("/iot/api/login",params).then(
+                            this.$http.post("/api/login",params).then(
                             success =>{
                                 console.log(success);
                                 if(success.data!=null){
@@ -58,6 +58,7 @@
                                     });
                                     console.log(success.data.token);
                                     localStorage.setItem('token',success.data.token);
+                                    localStorage.setItem('realname',this.ruleForm.username);
                                     self.$router.push('/readme');
                                 } else {
                                     this.$message({
@@ -90,7 +91,7 @@
 
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
-                            this.$http.post("/iot/api/users",params).then(
+                            this.$http.post("/api/users",params).then(
                             success =>{
                                 console.log(success);
                                 if(success.data!=null){
@@ -154,7 +155,7 @@
         text-align: center;
     }
     .login-btn button{
-        width:100%;
-        height:36px;
+        width:50%;
+        height:30px;
     }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <el-upload
       class="upload-demo"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="/api/sjz"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
       multiple
@@ -15,15 +15,15 @@
     export default {
        data() {
          return {
-           fileList: [{name: '1.jpg', url: 'http://pic.sogou.com/d?query=%CD%BC%C6%AC%B4%F3%C8%AB&st=255&mode=255&did=13#did12'}, {name: '2.jpg', url: 'http://pic.sogou.com/d?query=%CD%BC%C6%AC%B4%F3%C8%AB&st=255&mode=255&did=11#did10'}]
+           fileList: []
          };
        },
        methods: {
        send(){
            this.$axios({
                 method:"get",
-                url:"/iot/api/sjz/index",
-                headers:{'token': 'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OH0.YWmCSB5IzNWLrrxyiu6Xkqvn-CaLV1bBH2TaBd0fWRY'},
+                url:"/api/sjz/index",
+                headers:{'token': localStorage.getItem('token')},
                 responseType:'json',
            }).then(function(response){
                console.log(response)

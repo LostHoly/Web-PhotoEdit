@@ -1,9 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import BaiduMap from 'vue-baidu-map'
-Vue.use(BaiduMap, {
-  ak: 'ExfFHQ9aBANWYARtVU3neAeTP6nfUZcT'
-})
 Vue.use(Router);
 
 export default new Router({

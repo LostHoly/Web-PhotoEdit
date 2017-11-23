@@ -2,7 +2,7 @@
   "name": "manage-system",
   "version": "2.1.0",
   "description": "基于Vue.js 2.x系列 + element-ui",
-  "author": "lin-xin <2981207131@qq.com>",
+  "author": "LOST <1657478212@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
