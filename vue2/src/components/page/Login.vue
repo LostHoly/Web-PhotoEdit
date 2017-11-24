@@ -48,7 +48,7 @@
 
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
-                            this.$http.post("/api/login",params).then(
+                            this.$http.post("/iot/api/login",params).then(
                             success =>{
                                 console.log(success);
                                 if(success.data!=null){
@@ -91,7 +91,7 @@
 
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
-                            this.$http.post("/api/users",params).then(
+                            this.$http.post("/iot/api/users",params).then(
                             success =>{
                                 console.log(success);
                                 if(success.data!=null){

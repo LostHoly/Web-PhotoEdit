@@ -24,6 +24,7 @@
                 this.$confirm('确认退出吗?', '提示', {
                 }).then(() => {
                     console.log("权限已清除");
+                    localStorage.clear();
                     this.$router.push('/login');
                 }).catch(() => {
 
