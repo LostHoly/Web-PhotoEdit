@@ -26,26 +26,23 @@
 
        beforeupload(file){
          var reader = new FileReader();
-         var rd ;
          reader.readAsDataURL(file)
          reader.onload=function(e){
-           rd = e.target.result;
-         }
-         console.log(this)
-         VueComponent.$axios({
+            var rd = e.target.result;
+            $.axios({
                  method:"post",
                  url:"/iot/api/sjz/img",
-                 headers:{'token': localStorage.getItem('token')},
+                 headers:{'token': token},
                  data:{
                     imgName:file.name,
                     imgStr:rd
                  },
                  responseType:'json',
-            }).then(function(response){
-                console.log(response)
-            }).catch(function(error){
-                console.log(error)
-            })
+                  }).then(function(response){
+                      console.log(response)
+                  }).catch(function(error){
+                      console.log(error)
+                  })
         // this.$axios({
         //         method:"post",
         //         url:"/iot/api/sjz/img",
@@ -61,6 +58,7 @@
         //        console.log(error)
         //    })
            return false
+         }
        },
 
        handleRemove(file, fileList) {
