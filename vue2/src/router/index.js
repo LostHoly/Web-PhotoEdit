@@ -31,6 +31,10 @@ export default new Router({
                 {
                     path: '/dtlist',
                     component: resolve => require(['../components/page/Dtlist.vue'], resolve)
+                },
+                {
+                    path: '/edit',
+                    component: resolve => require(['../components/page/Edit.vue'], resolve)
                 }
             ],
              meta: {

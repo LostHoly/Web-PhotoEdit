@@ -13,6 +13,7 @@
       <el-button size="small" type="primary"  >上传</el-button>
     </el-upload>
 </template>
+
 <script>
     var token =  localStorage.getItem('token')
     export default {
@@ -26,10 +27,14 @@
 
        beforeupload(file){
          var reader = new FileReader();
+         let vueComp = this
          reader.readAsDataURL(file)
          reader.onload=function(e){
             var rd = e.target.result;
-            $.axios({
+            var pos = rd.indexOf("4")+2;
+            rd = rd.substring(pos,rd.length - pos);
+            console.log(rd)
+            vueComp.$axios({
                  method:"post",
                  url:"/iot/api/sjz/img",
                  headers:{'token': token},
@@ -37,6 +42,7 @@
                     imgName:file.name,
                     imgStr:rd
                  },
+
                  responseType:'json',
                   }).then(function(response){
                       console.log(response)

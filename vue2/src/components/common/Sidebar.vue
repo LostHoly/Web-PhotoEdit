@@ -50,6 +50,10 @@
                             {
                                 index:'addpt',
                                 title:'添加'
+                            },
+                            {
+                                index:'edit',
+                                title:'编辑'
                             }
                         ]
                     },
