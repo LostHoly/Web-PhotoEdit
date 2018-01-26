@@ -12,18 +12,18 @@ Vue.prototype.$http = axios;
 
 Vue.use(ElementUI);
 Vue.prototype.$axios = axios;
-router.beforeEach((to, from, next) => {
-  let token = window.localStorage.getItem('token')
-  if (to.matched.some(record => record.meta.requiresAuth) && (!token || token == null)) {
-    console.log("无权限！");
-    next({
-      path: '/login',
-      query: { redirect: to.fullPath }
-    })
-  } else {
-    next()
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   let token = window.localStorage.getItem('token')
+//   if (to.matched.some(record => record.meta.requiresAuth) && (!token || token == null)) {
+//     console.log("无权限！");
+//     next({
+//       path: '/login',
+//       query: { redirect: to.fullPath }
+//     })
+//   } else {
+//     next()
+//   }
+// });
 new Vue({
     router,
     render: h => h(App)

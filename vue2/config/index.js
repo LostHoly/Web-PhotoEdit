@@ -40,7 +40,7 @@ module.exports = {
               changeOrigin: true
           },
            '/iot':{
-              target:'http://192.168.31.69:5000',
+              target:'http://192.168.31.28:5000',
               changeOrigin:true,
               pathRewrite:{
                   '/iot':''

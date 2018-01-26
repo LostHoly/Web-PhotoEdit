@@ -32,8 +32,7 @@
          reader.onload=function(e){
             var rd = e.target.result;
             var pos = rd.indexOf("4")+2;
-            rd = rd.substring(pos,rd.length - pos);
-            console.log(rd)
+            rd = rd.substring(pos,rd.length);
             vueComp.$axios({
                  method:"post",
                  url:"/iot/api/sjz/img",
