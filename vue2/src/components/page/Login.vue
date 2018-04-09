@@ -24,8 +24,8 @@
         data: function(){
             return {
                 ruleForm: {
-                    username: '',
-                    password: ''
+                    username: 'sjz',
+                    password: '123456'
                 },
                 rules: {
                     username: [
@@ -41,8 +41,8 @@
             submitForm1(formName) {
                 const self = this;
                 let params = {
-                    "username" :this.ruleForm.username,
-                    "password" :this.ruleForm.password,
+                    "username" :'sjz',
+                    "password" :'123456',
                 };
                 console.log(params);
 

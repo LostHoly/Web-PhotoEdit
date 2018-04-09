@@ -9,15 +9,8 @@
 	|           |-- Home.vue           	 // 公共路由入口
 	|           |-- Sidebar.vue          // 公共左边栏
 	|		|-- page                   	 // 主要路由页面
-	|           |-- BaseCharts.vue       // 基础图表
-	|           |-- BaseForm.vue         // 基础表单
-	|           |-- BaseTable.vue        // 基础表格
 	|           |-- Login.vue          	 // 登录
-	|           |-- Markdown.vue         // markdown组件
 	|           |-- Readme.vue           // 自述组件
-	|           |-- Upload.vue           // 图片上传
-	|           |-- VueEditor.vue        // 富文本编辑器
-	|           |-- VueTable.vue         // vue表格组件
 	|   |-- App.vue                      // 页面入口文件
 	|   |-- main.js                      // 程序入口文件，加载各种公共组件
 	|-- .babelrc                         // ES6语法编译配置
@@ -36,7 +29,7 @@
 
 ## 本地开发 ##
 
-	// 开启服务器，浏览器访问 http://localhost:8080
+	// 开启服务器，浏览器访问 http://localhost:8082
 	npm run dev
 
 ## 构建生产 ##
@@ -46,49 +39,7 @@
 
 ## 组件使用说明与演示 ##
 
-### vue-schart ###
-vue.js封装sChart.js的图表组件。访问地址：[vue-schart](https://github.com/linxin/vue-schart)
-<p><a href="https://www.npmjs.com/package/vue-schart"><img src="https://img.shields.io/npm/dm/vue-schart.svg" alt="Downloads"></a></p>
 
-```JavaScript
-<template>
-    <div>
-        <schart :canvasId="canvasId"
-				:type="type"
-				:width="width"
-				:height="height"
-				:data="data"
-				:options="options"
-		></schart>
-    </div>
-</template>
-
-<script>
-    import Schart from 'vue-schart';        // 导入Schart组件
-    export default {
-        data: function(){
-            return {
-                canvasId: 'myCanvas',       // canvas的id
-                type: 'bar',                // 图表类型
-                width: 500,
-                height: 400,
-                data: [
-                    {name: '2014', value: 1342},
-                    {name: '2015', value: 2123},
-                    {name: '2016', value: 1654},
-                    {name: '2017', value: 1795},
-                ],
-                options: {                  // 图表可选参数
-                    title: 'Total sales of stores in recent years'
-                }
-            }
-        },
-        components: {
-            Schart
-        }
-    }
-</script>
-```
 
 ### element-ui ###
 一套基于vue.js2.0的桌面组件库。访问地址：[element](http://element.eleme.io/#/zh-CN/component/layout)
@@ -101,20 +52,11 @@ vue.js封装sChart.js的图表组件。访问地址：[vue-schart](https://githu
 
 第一步：删除该组件的路由，在目录 src/router/index.js 中，找到引入改组件的路由，删除下面这段代码。
 
-```JavaScript
-{
-    path: '/vuetable',
-    component: resolve => require(['../components/page/VueTable.vue'], resolve)     // vue-datasource组件
-},
-```
 
 第二步：删除引入该组件的文件。在目录 src/components/page/ 删除 VueTable.vue 文件。
 
 第三步：删除该页面的入口。在目录 src/components/common/Sidebar.vue 中，找到该入口，删除下面这段代码。
 
-```HTML
-<el-menu-item index="vuetable">Vue表格组件</el-menu-item>
-```
 
 第四步：卸载该组件。执行以下命令：
 
